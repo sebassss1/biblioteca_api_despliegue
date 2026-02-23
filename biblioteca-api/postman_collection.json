@@ -1,0 +1,280 @@
+{
+  "info": {
+    "name": "Biblioteca API",
+    "description": "Colección de peticiones para probar la API de Biblioteca",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Libros",
+      "item": [
+        {
+          "name": "Obtener todos los libros",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/libros",
+              "host": ["{{base_url}}"],
+              "path": ["api", "libros"]
+            }
+          }
+        },
+        {
+          "name": "Obtener libro por ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/libros/1",
+              "host": ["{{base_url}}"],
+              "path": ["api", "libros", "1"]
+            }
+          }
+        },
+        {
+          "name": "Crear libro",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"titulo\": \"1984\",\n  \"isbn\": \"978-0451524935\",\n  \"autor\": \"George Orwell\",\n  \"anioPublicacion\": 1949,\n  \"genero\": \"Distopía\",\n  \"disponible\": true\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/libros",
+              "host": ["{{base_url}}"],
+              "path": ["api", "libros"]
+            }
+          }
+        },
+        {
+          "name": "Actualizar libro",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"titulo\": \"1984 - Edición Actualizada\",\n  \"isbn\": \"978-0451524935\",\n  \"autor\": \"George Orwell\",\n  \"anioPublicacion\": 1949,\n  \"genero\": \"Distopía\",\n  \"disponible\": true\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/libros/1",
+              "host": ["{{base_url}}"],
+              "path": ["api", "libros", "1"]
+            }
+          }
+        },
+        {
+          "name": "Eliminar libro",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/libros/1",
+              "host": ["{{base_url}}"],
+              "path": ["api", "libros", "1"]
+            }
+          }
+        },
+        {
+          "name": "Obtener libros disponibles",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/libros/disponibles",
+              "host": ["{{base_url}}"],
+              "path": ["api", "libros", "disponibles"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Usuarios",
+      "item": [
+        {
+          "name": "Obtener todos los usuarios",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/usuarios",
+              "host": ["{{base_url}}"],
+              "path": ["api", "usuarios"]
+            }
+          }
+        },
+        {
+          "name": "Obtener usuario por ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/usuarios/1",
+              "host": ["{{base_url}}"],
+              "path": ["api", "usuarios", "1"]
+            }
+          }
+        },
+        {
+          "name": "Crear usuario con perfil",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nombre\": \"Juan Pérez\",\n  \"email\": \"juan.perez@email.com\",\n  \"telefono\": \"123456789\",\n  \"perfil\": {\n    \"direccion\": \"Calle Principal 123\",\n    \"ciudad\": \"Madrid\",\n    \"codigoPostal\": \"28001\",\n    \"preferenciasLectura\": \"Ficción, Historia\"\n  }\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/usuarios",
+              "host": ["{{base_url}}"],
+              "path": ["api", "usuarios"]
+            }
+          }
+        },
+        {
+          "name": "Actualizar usuario",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nombre\": \"Juan Pérez García\",\n  \"email\": \"juan.perez@email.com\",\n  \"telefono\": \"987654321\",\n  \"perfil\": {\n    \"direccion\": \"Calle Secundaria 456\",\n    \"ciudad\": \"Barcelona\",\n    \"codigoPostal\": \"08001\",\n    \"preferenciasLectura\": \"Ciencia Ficción, Novela\"\n  }\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/usuarios/1",
+              "host": ["{{base_url}}"],
+              "path": ["api", "usuarios", "1"]
+            }
+          }
+        },
+        {
+          "name": "Eliminar usuario",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/usuarios/1",
+              "host": ["{{base_url}}"],
+              "path": ["api", "usuarios", "1"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Préstamos",
+      "item": [
+        {
+          "name": "Obtener todos los préstamos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/prestamos",
+              "host": ["{{base_url}}"],
+              "path": ["api", "prestamos"]
+            }
+          }
+        },
+        {
+          "name": "Obtener préstamo por ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/prestamos/1",
+              "host": ["{{base_url}}"],
+              "path": ["api", "prestamos", "1"]
+            }
+          }
+        },
+        {
+          "name": "Crear préstamo",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"usuarioId\": 1,\n  \"libroId\": 1\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/prestamos",
+              "host": ["{{base_url}}"],
+              "path": ["api", "prestamos"]
+            }
+          }
+        },
+        {
+          "name": "Devolver libro",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/prestamos/1/devolver",
+              "host": ["{{base_url}}"],
+              "path": ["api", "prestamos", "1", "devolver"]
+            }
+          }
+        },
+        {
+          "name": "Obtener préstamos activos de usuario",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/prestamos/usuario/1/activos",
+              "host": ["{{base_url}}"],
+              "path": ["api", "prestamos", "usuario", "1", "activos"]
+            }
+          }
+        },
+        {
+          "name": "Eliminar préstamo",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/prestamos/1",
+              "host": ["{{base_url}}"],
+              "path": ["api", "prestamos", "1"]
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:8080",
+      "type": "string"
+    }
+  ]
+}
