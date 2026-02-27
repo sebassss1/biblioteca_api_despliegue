@@ -11,7 +11,6 @@ WORKDIR /app
 COPY --from=build /app/target/biblioteca-api-1.0.0.jar app.jar
 
 # Variables de entorno con valores por defecto
-ENV SPRING_PROFILES_ACTIVE=prod
 ENV SERVER_PORT=8080
 
 EXPOSE 8080
